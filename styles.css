@@ -337,6 +337,23 @@ section + section {
   gap: 0.75rem;
 }
 
+.hero__actions--compact .button--secondary {
+  background: var(--color-blue);
+  color: #f8fafc;
+  box-shadow: 0 12px 28px rgba(30, 58, 138, 0.4);
+}
+
+.hero__actions--compact .button--secondary:hover,
+.hero__actions--compact .button--secondary:focus {
+  background: #2e4fb5;
+  transform: translateY(-2px);
+}
+
+.hero__actions--compact .button--secondary:focus-visible {
+  outline: 3px solid rgba(248, 250, 252, 0.75);
+  outline-offset: 3px;
+}
+
 @media (min-width: 768px) {
   .project-card {
     flex-direction: row;
