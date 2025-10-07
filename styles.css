@@ -233,7 +233,7 @@ header {
 
 .hero__image {
   justify-self: center;
-  max-width: clamp(170px, 20vw, 260px);
+  max-width: clamp(254px, 29.9vw, 389px);
   width: 100%;
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.12);
