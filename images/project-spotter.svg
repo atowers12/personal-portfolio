@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" aria-labelledby="title desc">
+  <title id="title">Spotter project placeholder graphic</title>
+  <desc id="desc">Abstract shapes representing a mobile and web dashboard.</desc>
+  <rect width="480" height="300" rx="24" fill="#264653" />
+  <rect x="44" y="52" width="392" height="196" rx="18" fill="#2a9d8f" />
+  <rect x="76" y="88" width="196" height="120" rx="12" fill="#f4a261" opacity="0.85" />
+  <rect x="292" y="88" width="108" height="44" rx="10" fill="#e9c46a" opacity="0.9" />
+  <rect x="292" y="148" width="108" height="60" rx="10" fill="#e76f51" opacity="0.9" />
+</svg>

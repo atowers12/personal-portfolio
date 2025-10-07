@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Resume for Andrew Towers featuring education, experience, and technical skills." />
+    <title>Resume | Andrew Towers</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header>
+      <div class="top-bar">
+        <div class="brand">
+          <p class="brand__name">Andrew Towers</p>
+          <p class="brand__tagline">MSIS Candidate · GIS & Automation Specialist</p>
+        </div>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="menu-toggle__bars" aria-hidden="true">
+            <span class="menu-toggle__bar"></span>
+            <span class="menu-toggle__bar"></span>
+            <span class="menu-toggle__bar"></span>
+          </span>
+          <span class="menu-toggle__text">Menu</span>
+        </button>
+        <nav class="site-nav" id="primary-navigation" aria-label="Primary" data-menu-open="false">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="resume.html" aria-current="page">Resume</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="hero">
+        <div class="hero__content">
+          <h1>Resume</h1>
+          <p>
+            Download-ready overview of my education, experience, technical toolkit, and selected accomplishments.
+            I love blending analytics, automation, and GIS storytelling to support confident decision-making.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="mailto:atowers@iu.edu">Request full PDF</a>
+            <a class="button button--secondary" href="projects.html">Browse project case studies</a>
+          </div>
+        </div>
+        <picture class="hero__image">
+          <img src="images/profile-picture.jpg" alt="Resume graphic abstraction" />
+        </picture>
+      </div>
+    </header>
+
+    <main id="main">
+      <section aria-labelledby="contact-heading">
+        <h2 class="section__title" id="contact-heading">Contact</h2>
+        <div class="contact-info">
+          <ul>
+            <li><strong>Email:</strong> <a href="mailto:atowers@iu.edu">atowers@iu.edu</a></li>
+            <li><strong>Phone:</strong> <a href="tel:+18125653686">(812) 565-3686</a></li>
+            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/towers-andrew" rel="noopener">linkedin.com/in/towers-andrew</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section aria-labelledby="education-heading">
+        <h2 class="section__title" id="education-heading">Education</h2>
+        <div class="resume-section">
+          <article class="resume-item">
+            <div class="resume-item__header">
+              <span>Indiana University · Kelley School of Business</span>
+              <span>Bloomington, IN · May 2026</span>
+            </div>
+            <p class="resume-item__subhead">Master of Science in Information Systems</p>
+            <ul class="card__list">
+              <li>Graduate Assistantship awarded based on academic achievement.</li>
+            </ul>
+          </article>
+          <article class="resume-item">
+            <div class="resume-item__header">
+              <span>Indiana University · Luddy School of Informatics, Computing, and Engineering</span>
+              <span>Bloomington, IN · May 2025</span>
+            </div>
+            <p class="resume-item__subhead">Bachelor of Informatics · Minors: Business & Computer Science · GPA: 3.35/4.00</p>
+            <ul class="card__list">
+              <li>Undergraduate Instructor, Intro to Informatics: taught labs twice weekly and mentored students for three semesters.</li>
+              <li>First Place, MSIS 3+1 Case Competition (2024) presenting Netflix cloud gaming strategy.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section aria-labelledby="experience-heading">
+        <h2 class="section__title" id="experience-heading">Experience</h2>
+        <div class="resume-section">
+          <article class="resume-item">
+            <div class="resume-item__header">
+              <span>ACT Research · Business Analyst Intern</span>
+              <span>Columbus, IN · May 2025 – Aug 2025</span>
+            </div>
+            <ul class="card__list">
+              <li>Automated downloading and parsing of financial reports using AI, reducing analyst processing time from hours to minutes.</li>
+              <li>Built high-performance data ingestion pipelines with Python, SQL, and Excel to process millions of records.</li>
+              <li>Partnered with analysts to gather feedback, designing quality-of-life features for reporting tools.</li>
+              <li>Integrated disparate systems in n8n to deliver instant AI context to sales staff.</li>
+            </ul>
+          </article>
+
+          <article class="resume-item">
+            <div class="resume-item__header">
+              <span>Community Education Coalition · GIS Intern</span>
+              <span>Columbus, IN · Jun 2024 – Sep 2024</span>
+            </div>
+            <ul class="card__list">
+              <li>Designed interactive demographic maps for 10 U.S. regions using ArcGIS Pro and ArcGIS Online.</li>
+              <li>Crafted experiences with layered visuals and reference tables to support local and county government stakeholders.</li>
+            </ul>
+          </article>
+
+          <article class="resume-item">
+            <div class="resume-item__header">
+              <span>City of Columbus · HRIS Intern</span>
+              <span>Bloomington, IN · May 2023 – Aug 2023</span>
+            </div>
+            <ul class="card__list">
+              <li>Reconciled city-wide budgets by merging data from multiple systems in Excel.</li>
+              <li>Assisted HR in linking outputs between MUNIS and PoliceApp systems.</li>
+              <li>Provided front-desk coverage, strengthening communication and customer service.</li>
+            </ul>
+          </article>
+
+          <article class="resume-item">
+            <div class="resume-item__header">
+              <span>Columbus City Utilities · Information Technology Intern</span>
+              <span>Columbus, IN · Jun 2022 – Aug 2022</span>
+            </div>
+            <ul class="card__list">
+              <li>Built a Python tool that converted radio water meter addresses into coordinates using Google’s Geocoding API for ArcGIS mapping.</li>
+              <li>Maintained and repaired live network equipment across four facilities.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section aria-labelledby="projects-heading">
+        <h2 class="section__title" id="projects-heading">Academic project</h2>
+        <article class="card">
+          <h3 class="card__title">Spotter — Student Recreation Facility Utilization App</h3>
+          <p class="card__meta">Capstone Project · Aug 2024 – May 2025</p>
+          <ul class="card__list">
+            <li>Developed a mobile and web platform improving visibility into IU recreation facility usage.</li>
+            <li>Owned full-stack contributions including UI design, database integration, and performance optimization.</li>
+            <li>Conducted user testing to prioritize features and delivered a final demo highlighting scalability.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section aria-labelledby="skills-heading">
+        <h2 class="section__title" id="skills-heading">Technical toolkit</h2>
+        <table class="table-list" aria-describedby="skills-heading">
+          <thead>
+            <tr>
+              <th scope="col">Category</th>
+              <th scope="col">Tools & Languages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Software</th>
+              <td>Adobe (Photoshop, Lightroom, Premiere), Microsoft Office, ArcGIS Pro, ArcGIS Online</td>
+            </tr>
+            <tr>
+              <th scope="row">Programming</th>
+              <td>Python, PostgreSQL, Microsoft SQL Server, Java, R, JavaScript, CSS, HTML, VBA, C, PHP</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section aria-labelledby="interests-heading">
+        <h2 class="section__title" id="interests-heading">Additional interests</h2>
+        <blockquote>
+          Enjoyer of all things outdoors: hiking, camping, trail running, climbing, and nature photography.
+        </blockquote>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="year">2025</span> Andrew Towers. Crafted to be printable and accessible.</p>
+      <p>
+        Request references via <a href="mailto:atowers@iu.edu">atowers@iu.edu</a>
+      </p>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const menuToggle = document.querySelector(".menu-toggle");
+      const nav = document.getElementById("primary-navigation");
+      const mobileQuery = window.matchMedia("(max-width: 768px)");
+
+      if (menuToggle && nav) {
+        const closeMenu = () => {
+          menuToggle.setAttribute("aria-expanded", "false");
+          nav.dataset.menuOpen = "false";
+        };
+
+        const openMenu = () => {
+          menuToggle.setAttribute("aria-expanded", "true");
+          nav.dataset.menuOpen = "true";
+        };
+
+        menuToggle.addEventListener("click", () => {
+          const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+          if (expanded) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        });
+
+        nav.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            if (mobileQuery.matches) {
+              closeMenu();
+            }
+          });
+        });
+
+        mobileQuery.addEventListener("change", (event) => {
+          if (!event.matches) {
+            closeMenu();
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

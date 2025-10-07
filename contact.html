@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Contact Andrew Towers and request additional details about his work." />
+    <title>Contact | Andrew Towers</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header>
+      <div class="top-bar">
+        <div class="brand">
+          <p class="brand__name">Andrew Towers</p>
+          <p class="brand__tagline">MSIS Candidate · GIS & Automation Specialist</p>
+        </div>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="menu-toggle__bars" aria-hidden="true">
+            <span class="menu-toggle__bar"></span>
+            <span class="menu-toggle__bar"></span>
+            <span class="menu-toggle__bar"></span>
+          </span>
+          <span class="menu-toggle__text">Menu</span>
+        </button>
+        <nav class="site-nav" id="primary-navigation" aria-label="Primary" data-menu-open="false">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html" aria-current="page">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="hero">
+        <div class="hero__content">
+          <h1>Let’s build something thoughtful together.</h1>
+          <p>
+            Share a bit about your team or project goals and I’ll reach out with next steps. I’m especially excited about
+            automation, analytics storytelling, and geospatial problem solving.
+          </p>
+        </div>
+        <picture class="hero__image">
+          <img src="images/project-automation.svg" alt="Stylized illustration of connected nodes" />
+        </picture>
+      </div>
+    </header>
+
+    <main id="main">
+      <section aria-labelledby="contact-info-heading">
+        <h2 class="section__title" id="contact-info-heading">Direct contact</h2>
+        <div class="contact-card">
+          <div class="contact-info">
+            <ul>
+              <li><strong>Email:</strong> <a href="mailto:atowers@iu.edu">atowers@iu.edu</a></li>
+              <li><strong>Phone:</strong> <a href="tel:+18125653686">(812) 565-3686</a></li>
+              <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/towers-andrew" rel="noopener">linkedin.com/in/towers-andrew</a></li>
+            </ul>
+          </div>
+          <form id="contact-form" novalidate>
+            <fieldset>
+              <legend class="section__title">Send a message</legend>
+              <div class="form-field">
+                <label for="first-name">First Name</label>
+                <input id="first-name" name="first-name" type="text" required autocomplete="given-name" />
+              </div>
+              <div class="form-field">
+                <label for="last-name">Last Name</label>
+                <input id="last-name" name="last-name" type="text" required autocomplete="family-name" />
+              </div>
+              <div class="form-field">
+                <label for="email">Email Address</label>
+                <input id="email" name="email" type="email" required autocomplete="email" />
+              </div>
+              <div class="form-field">
+                <label for="password">Password</label>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  minlength="8"
+                  required
+                  autocomplete="new-password"
+                  aria-describedby="password-help"
+                />
+                <small id="password-help">Must include at least 8 characters.</small>
+              </div>
+              <div class="form-field">
+                <label for="confirm-password">Confirm Password</label>
+                <input
+                  id="confirm-password"
+                  name="confirm-password"
+                  type="password"
+                  minlength="8"
+                  required
+                  autocomplete="new-password"
+                />
+              </div>
+              <div class="form-field">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                  placeholder="Tell me about your project goals, timeline, or questions."
+                ></textarea>
+              </div>
+              <p class="form__feedback" id="form-feedback" role="alert" aria-live="assertive"></p>
+              <div class="form-actions">
+                <button class="button button--primary" type="submit">Submit</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="year">2025</span> Andrew Towers. Looking forward to connecting.</p>
+      <p>
+        Prefer email? <a href="mailto:atowers@iu.edu">atowers@iu.edu</a>
+      </p>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const menuToggle = document.querySelector(".menu-toggle");
+      const nav = document.getElementById("primary-navigation");
+      const mobileQuery = window.matchMedia("(max-width: 768px)");
+
+      if (menuToggle && nav) {
+        const closeMenu = () => {
+          menuToggle.setAttribute("aria-expanded", "false");
+          nav.dataset.menuOpen = "false";
+        };
+
+        const openMenu = () => {
+          menuToggle.setAttribute("aria-expanded", "true");
+          nav.dataset.menuOpen = "true";
+        };
+
+        menuToggle.addEventListener("click", () => {
+          const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+          if (expanded) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        });
+
+        nav.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            if (mobileQuery.matches) {
+              closeMenu();
+            }
+          });
+        });
+
+        mobileQuery.addEventListener("change", (event) => {
+          if (!event.matches) {
+            closeMenu();
+          }
+        });
+      }
+
+      const form = document.getElementById("contact-form");
+      const feedback = document.getElementById("form-feedback");
+  const password = document.getElementById("password");
+  const confirmPassword = document.getElementById("confirm-password");
+
+      form.addEventListener("submit", (event) => {
+        feedback.textContent = "";
+
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          form.reportValidity();
+          return;
+        }
+
+        if (password.value !== confirmPassword.value) {
+          event.preventDefault();
+          feedback.textContent = "Passwords must match. Please try again.";
+          confirmPassword.focus();
+          return;
+        }
+
+        event.preventDefault();
+        feedback.textContent = "Submitting...";
+        setTimeout(() => {
+          window.location.href = "thankyou.html";
+        }, 300);
+      });
+    </script>
+  </body>
+</html>

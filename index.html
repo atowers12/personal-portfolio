@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Andrew Towers' portfolio showcasing GIS, analytics, and AI-assisted automation projects."
+    />
+    <title>Andrew Towers | Information Systems & Analytics</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header>
+      <div class="top-bar">
+        <div class="brand">
+          <p class="brand__name">Andrew Towers</p>
+          <p class="brand__tagline">MSIS Candidate · GIS & Automation Specialist</p>
+        </div>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="menu-toggle__bars" aria-hidden="true">
+            <span class="menu-toggle__bar"></span>
+            <span class="menu-toggle__bar"></span>
+            <span class="menu-toggle__bar"></span>
+          </span>
+          <span class="menu-toggle__text">Menu</span>
+        </button>
+        <nav class="site-nav" id="primary-navigation" aria-label="Primary" data-menu-open="false">
+          <ul>
+            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="hero">
+        <div class="hero__content">
+          <h1>Building data-driven tools that make complex decisions clear.</h1>
+          <p>
+            I’m an Information Systems graduate student at Indiana University who thrives on
+            translating messy datasets into accessible insights. From automating financial report
+            ingestion to designing interactive GIS experiences, I bridge technical execution with
+            stakeholder-ready storytelling.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="projects.html">Explore featured work</a>
+            <a class="button button--secondary" href="resume.html">View my resume</a>
+          </div>
+        </div>
+        <picture class="hero__image">
+          <img src="images/profile-picture.jpg" alt="Stylized illustration representing Andrew Towers" />
+        </picture>
+      </div>
+    </header>
+
+    <main id="main">
+      <section aria-labelledby="impact-heading">
+        <h2 class="section__title" id="impact-heading">Impact at a glance</h2>
+        <p class="section__intro">
+          I’m passionate about augmenting teams with practical automation. Recent roles span
+          business analytics, GIS, HRIS, and IT operations—each one focused on delivering tools
+          that accelerate insights and elevate user experience.
+        </p>
+        <div class="grid grid--two">
+          <article class="card">
+            <h3 class="card__title">Automation & Analytics</h3>
+            <p class="card__meta">ACT Research · 2025</p>
+            <ul class="card__list">
+              <li>Reduced quarterly report processing from hours to minutes via AI-assisted pipeline.</li>
+              <li>Architected high-volume ingestion workflow mixing Python, SQL, and Excel.</li>
+              <li>Embedded quality-of-life features based on analyst feedback loops.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Interactive GIS storytelling</h3>
+            <p class="card__meta">Community Education Coalition · 2024</p>
+            <ul class="card__list">
+              <li>Crafted multi-layer ArcGIS dashboards for ten regional partners.</li>
+              <li>Blended choropleth maps, charts, and linked tables for policy insights.</li>
+              <li>Scaled templates for local and county government stakeholders.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section aria-labelledby="highlights-heading">
+        <h2 class="section__title" id="highlights-heading">Highlights</h2>
+        <div class="grid grid--two">
+          <article class="card">
+            <h3 class="card__title">Instruction & mentorship</h3>
+            <p>
+              Led Intro to Informatics lab sections for three semesters, teaching 30 students twice
+              weekly while providing one-on-one academic support.
+            </p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Case competition champion</h3>
+            <p>
+              First place at the 2024 MSIS 3+1 Case Competition, presenting Netflix’s cloud gaming
+              strategy to faculty judges.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section aria-labelledby="cta-heading">
+        <h2 class="section__title" id="cta-heading">Let’s collaborate</h2>
+        <p class="section__intro">
+          I’m currently seeking opportunities where data, mapping, and automation intersect. If
+          you’re aiming to modernize analytics workflows or craft clearer decision tools, I’d love to
+          explore how I can help.
+        </p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="contact.html">Start a conversation</a>
+          <a class="button button--secondary" href="about.html">Learn more about me</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="year">2025</span> Andrew Towers. Built with accessibility and curiosity.</p>
+      <p>
+        Connect on <a href="https://www.linkedin.com/in/towers-andrew" rel="noopener">LinkedIn</a>
+        or <a href="mailto:atowers@iu.edu">atowers@iu.edu</a>
+      </p>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const menuToggle = document.querySelector(".menu-toggle");
+      const nav = document.getElementById("primary-navigation");
+      const mobileQuery = window.matchMedia("(max-width: 768px)");
+
+      if (menuToggle && nav) {
+        const closeMenu = () => {
+          menuToggle.setAttribute("aria-expanded", "false");
+          nav.dataset.menuOpen = "false";
+        };
+
+        const openMenu = () => {
+          menuToggle.setAttribute("aria-expanded", "true");
+          nav.dataset.menuOpen = "true";
+        };
+
+        menuToggle.addEventListener("click", () => {
+          const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+          if (expanded) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        });
+
+        nav.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            if (mobileQuery.matches) {
+              closeMenu();
+            }
+          });
+        });
+
+        mobileQuery.addEventListener("change", (event) => {
+          if (!event.matches) {
+            closeMenu();
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

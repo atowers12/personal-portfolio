@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Featured projects by Andrew Towers covering automation, analytics, and GIS." />
+    <title>Projects | Andrew Towers</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header>
+      <div class="top-bar">
+        <div class="brand">
+          <p class="brand__name">Andrew Towers</p>
+          <p class="brand__tagline">MSIS Candidate · GIS & Automation Specialist</p>
+        </div>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="menu-toggle__bars" aria-hidden="true">
+            <span class="menu-toggle__bar"></span>
+            <span class="menu-toggle__bar"></span>
+            <span class="menu-toggle__bar"></span>
+          </span>
+          <span class="menu-toggle__text">Menu</span>
+        </button>
+        <nav class="site-nav" id="primary-navigation" aria-label="Primary" data-menu-open="false">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="projects.html" aria-current="page">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="hero">
+        <div class="hero__content">
+          <h1>Projects that blend automation, mapping, and stakeholder storytelling.</h1>
+          <p>
+            Here’s a sample of the work I lead and contribute to—each project anchored in making complex data
+            ecosystems easier to trust, explore, and act upon.
+          </p>
+        </div>
+        <picture class="hero__image">
+          <img src="images/project-spotter.svg" alt="Abstract dashboard graphic representing project work" />
+        </picture>
+      </div>
+    </header>
+
+    <main id="main">
+      <section aria-labelledby="spotter-heading">
+        <h2 class="section__title" id="spotter-heading">Spotter — Student Recreation Facility Utilization</h2>
+        <article class="card project-card">
+          <img class="project-card__media project-card__media--spotter" src="images/Spotter.png" alt="Screenshot of the Spotter utilization dashboard" />
+          <div class="project-card__content">
+            <p class="card__meta">Capstone · Aug 2024 – May 2025</p>
+            <p>
+              A year-long capstone involving a mobile and web platform that helps Indiana University students make smarter
+              decisions about visiting campus recreation facilities.
+            </p>
+            <ul class="card__list">
+              <li>Collaborated with a cross-functional team to design UX, integrate databases, and optimize performance.</li>
+              <li>Ran ongoing user testing cycles to prioritize high-value features and drive sprint planning.</li>
+              <li>Delivered a final demo to faculty emphasizing adoption potential and scalability for other universities.</li>
+            </ul>
+            <div class="hero__actions hero__actions--compact">
+              <a class="button button--primary" href="https://ratwal.pages.iu.edu/team-16-main/index.php" rel="noopener" target="_blank">View live site</a>
+              <a class="button button--secondary" href="https://github.iu.edu/info-capstone-2025/team-16" rel="noopener" target="_blank">Explore repository</a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section aria-labelledby="properties-heading">
+        <h2 class="section__title" id="properties-heading">Polly and Peter's Properties Management Portal</h2>
+        <article class="card project-card">
+          <img class="project-card__media" src="images/Polly%20and%20Peters%20Properties.png" alt="Screenshot of the Polly and Peter's Properties management dashboard" />
+          <div class="project-card__content">
+            <p class="card__meta">I308 Course Project · Spring 2024</p>
+            <p>
+              Class project to design a full-stack web application backed by a relational database for the fictional client
+              Polly and Peter's Properties. The system supports daily operations, reporting, and long-term planning.
+            </p>
+            <ul class="card__list">
+              <li>Implemented modules for property maintenance, legal action tracking, lease management, and owner records.</li>
+              <li>Designed "Pricey Properties" insights to highlight revenue opportunities and surface at-risk assets.</li>
+              <li>Modeled database entities and relationships to keep business data consistent and auditable.</li>
+            </ul>
+            <div class="hero__actions hero__actions--compact">
+              <a class="button button--primary" href="https://ratwal.pages.iu.edu/I308-main/index.php" rel="noopener" target="_blank">Visit application</a>
+              <a class="button button--secondary" href="https://github.iu.edu/madimond/I308" rel="noopener" target="_blank">View repository</a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section aria-labelledby="future-heading">
+        <h2 class="section__title" id="future-heading">What’s next?</h2>
+        <p class="section__intro">
+          I’m inspired by opportunities that pair geospatial context with predictive analytics. If your team is exploring
+          automation, digital twins, or data-rich storytelling, let’s connect.
+        </p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="contact.html">Start a project conversation</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="year">2025</span> Andrew Towers. Always iterating, always learning.</p>
+      <p>
+        Reach out via <a href="mailto:atowers@iu.edu">atowers@iu.edu</a>
+      </p>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const menuToggle = document.querySelector(".menu-toggle");
+      const nav = document.getElementById("primary-navigation");
+      const mobileQuery = window.matchMedia("(max-width: 768px)");
+
+      if (menuToggle && nav) {
+        const closeMenu = () => {
+          menuToggle.setAttribute("aria-expanded", "false");
+          nav.dataset.menuOpen = "false";
+        };
+
+        const openMenu = () => {
+          menuToggle.setAttribute("aria-expanded", "true");
+          nav.dataset.menuOpen = "true";
+        };
+
+        menuToggle.addEventListener("click", () => {
+          const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+          if (expanded) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        });
+
+        nav.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            if (mobileQuery.matches) {
+              closeMenu();
+            }
+          });
+        });
+
+        mobileQuery.addEventListener("change", (event) => {
+          if (!event.matches) {
+            closeMenu();
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

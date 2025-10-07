@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Learn more about Andrew Towers' background, values, and interests." />
+    <title>About | Andrew Towers</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header>
+      <div class="top-bar">
+        <div class="brand">
+          <p class="brand__name">Andrew Towers</p>
+          <p class="brand__tagline">MSIS Candidate · GIS & Automation Specialist</p>
+        </div>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="menu-toggle__bars" aria-hidden="true">
+            <span class="menu-toggle__bar"></span>
+            <span class="menu-toggle__bar"></span>
+            <span class="menu-toggle__bar"></span>
+          </span>
+          <span class="menu-toggle__text">Menu</span>
+        </button>
+        <nav class="site-nav" id="primary-navigation" aria-label="Primary" data-menu-open="false">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" aria-current="page">About</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="hero">
+        <div class="hero__content">
+          <h1>Curiosity-driven technologist with a passion for clear, human-centered insights.</h1>
+          <p>
+            I’m energized by projects that combine deep data exploration with storytelling that anyone can
+            understand. Whether I’m mapping community assets, accelerating analyst workflows, or guiding
+            students through foundational tech concepts, I focus on clarity, empathy, and continuous learning.
+          </p>
+        </div>
+        <picture class="hero__image">
+          <img src="images/profile-picture.jpg" alt="Illustration representing Andrew exploring the outdoors" />
+        </picture>
+      </div>
+    </header>
+
+    <main id="main">
+      <section aria-labelledby="roots-heading">
+        <h2 class="section__title" id="roots-heading">Roots & values</h2>
+        <div class="grid grid--two">
+          <article class="card">
+            <h3 class="card__title">Systems thinking</h3>
+            <p>
+              From reconciling budget data across city departments to integrating automation workflows, I enjoy
+              untangling complex systems and revealing actionable patterns for the people who rely on them.
+            </p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Teaching mindset</h3>
+            <p>
+              Serving as an undergraduate instructor for Intro to Informatics taught me the power of patient,
+              iterative coaching. Those experiences shape how I collaborate with stakeholders today.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section aria-labelledby="journey-heading">
+        <h2 class="section__title" id="journey-heading">Academic journey</h2>
+        <div class="resume-section">
+          <div class="resume-item">
+            <div class="resume-item__header">
+              <span>Indiana University · Kelley School of Business</span>
+              <span>Bloomington, IN · May 2026</span>
+            </div>
+            <p class="resume-item__subhead">Master of Science in Information Systems</p>
+            <ul class="card__list">
+              <li>Graduate Assistantship awarded for academic excellence.</li>
+              <li>Focus areas: data strategy, systems analysis, product delivery.</li>
+            </ul>
+          </div>
+          <div class="resume-item">
+            <div class="resume-item__header">
+              <span>Indiana University · Luddy School of Informatics, Computing, and Engineering</span>
+              <span>Bloomington, IN · May 2025</span>
+            </div>
+            <p class="resume-item__subhead">Bachelor of Informatics · Minors in Business & Computer Science · GPA 3.35/4.00</p>
+            <ul class="card__list">
+              <li>Led lab sections of 30 students twice weekly as an Undergraduate Instructor.</li>
+              <li>Winner of the 2024 MSIS 3+1 Case Competition (Cloud Gaming strategy for Netflix).</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="beyond-heading">
+        <h2 class="section__title" id="beyond-heading">Beyond the screen</h2>
+        <div class="grid grid--two">
+          <article class="card">
+            <h3 class="card__title">Outdoor enthusiast</h3>
+            <p>
+              Hiking, camping, trail running, and climbing keep me grounded. Nature photography fuels my creative eye
+              and inspires the way I frame data narratives.
+            </p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Community-minded</h3>
+            <p>
+              Many of my projects center on enabling local governments and coalitions to understand their
+              communities more clearly—pairing tech with civic impact.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="year">2025</span> Andrew Towers. Crafted with accessibility in mind.</p>
+      <p>
+        Connect on <a href="https://www.linkedin.com/in/towers-andrew" rel="noopener">LinkedIn</a>
+        or <a href="mailto:atowers@iu.edu">atowers@iu.edu</a>
+      </p>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const menuToggle = document.querySelector(".menu-toggle");
+      const nav = document.getElementById("primary-navigation");
+      const mobileQuery = window.matchMedia("(max-width: 768px)");
+
+      if (menuToggle && nav) {
+        const closeMenu = () => {
+          menuToggle.setAttribute("aria-expanded", "false");
+          nav.dataset.menuOpen = "false";
+        };
+
+        const openMenu = () => {
+          menuToggle.setAttribute("aria-expanded", "true");
+          nav.dataset.menuOpen = "true";
+        };
+
+        menuToggle.addEventListener("click", () => {
+          const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+          if (expanded) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        });
+
+        nav.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            if (mobileQuery.matches) {
+              closeMenu();
+            }
+          });
+        });
+
+        mobileQuery.addEventListener("change", (event) => {
+          if (!event.matches) {
+            closeMenu();
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

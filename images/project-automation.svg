@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" aria-labelledby="title desc">
+  <title id="title">Automation tooling project placeholder</title>
+  <desc id="desc">Stylized nodes connected by lines to represent automation workflows.</desc>
+  <rect width="480" height="300" rx="24" fill="#003049" />
+  <circle cx="120" cy="96" r="44" fill="#669bbc" />
+  <circle cx="340" cy="86" r="36" fill="#fcbf49" />
+  <circle cx="216" cy="214" r="54" fill="#e36414" />
+  <path d="M120 96 L340 86" stroke="#fdf0d5" stroke-width="10" stroke-linecap="round" opacity="0.85" />
+  <path d="M120 96 L216 214" stroke="#fdf0d5" stroke-width="10" stroke-linecap="round" opacity="0.85" />
+  <path d="M340 86 L216 214" stroke="#fdf0d5" stroke-width="10" stroke-linecap="round" opacity="0.85" />
+</svg>
